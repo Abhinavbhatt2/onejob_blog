@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How AI Analyzes Job Descriptions to Tailor Your Resume | AI Resume Builder</title>
+  <meta name="description" content="Discover the science behind AI-powered resume writing. Learn how smart algorithms scan job descriptions and customize your resume to stand out for every application." />
+  <meta name="keywords" content="AI resume, job description analysis, tailored resume, AI job search, resume builder, job matching, resume optimization" />
+  <meta name="author" content="ai.getonejob.in" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; margin: 0; background: #f4f7fa; color: #222; line-height: 1.6; }
+    a { color: #2960ff; text-decoration: none; transition: color 0.3s ease; }
+    a:hover, a:focus { color: #0039cc; outline: none; }
+    .navbar {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 6vw 15px 3vw;
+      border-bottom: 1px solid #e5e8ec;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.025);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .navbar .logo-container { display: flex; align-items: center; }
+    .navbar .logo-container img { height: 38px; width: auto; margin-right: 10px; }
+    .navbar .brand-title { font-weight: 700; font-size: 1.2rem; color: #1d3557; }
+    .navbar .nav-links { display: flex; align-items: center; gap: 1.5em; }
+    .navbar .nav-links a { color: #23567a; font-weight: 500; font-size: 1.04rem; padding: 6px 0; border-radius: 3px; transition: background 0.18s; }
+    .navbar .nav-links a:hover, .navbar .nav-links a.active { background: #e7f2fb; color: #2960ff; }
+    .ai-btn { background: #2960ff; color: #fff !important; font-weight: 700; padding: 7px 20px; border-radius: 5px; margin-left: 14px; box-shadow: 0 2px 3px rgba(35,86,122,0.10); transition: background 0.18s; }
+    .ai-btn:hover, .ai-btn:focus { background: #0039cc; }
+    main {
+      max-width: 900px;
+      background: white;
+      margin: 30px auto 60px;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+    }
+    h1, h2, h3 {
+      color: #23567a;
+      margin-top: 1.4em;
+      margin-bottom: 0.4em;
+      line-height: 1.2;
+    }
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 0.7em;
+    }
+    h2 { font-size: 2.1rem; }
+    h3 { font-size: 1.32rem; }
+    p { font-size: 1.1rem; margin: 0 0 1.2em 0; color: #333; }
+    ul, ol { padding-left: 20px; margin-bottom: 1.2em; color: #444; }
+    li { margin-bottom: 0.55em; font-size: 1.04rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1.8em 0; font-size: 1rem; }
+    th, td { padding: 12px 15px; border: 1px solid #ccc; text-align: left; }
+    th { background-color: #e7f2fb; color: #1f497d; font-weight: 700; }
+    .cta-button {
+      display: inline-block;
+      background-color: #2960ff;
+      color: #fff !important;
+      padding: 14px 36px;
+      font-size: 1.25rem;
+      border-radius: 30px;
+      font-weight: 700;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+      user-select: none;
+      text-decoration: none;
+    }
+    .cta-button:hover, .cta-button:focus { background-color: #0039cc; outline: none; }
+    @media (max-width: 720px) {
+      main { margin: 20px 15px 50px; padding: 25px 11px; }
+      h1 { font-size: 2.08rem; }
+      h2 { font-size: 1.56rem; }
+      h3 { font-size: 1.01rem; }
+      .cta-button { font-size: 1rem; padding: 12px 28px; }
+      table { font-size: 0.9rem; }
+    }
+    figure { max-width: 200px; margin: 20px auto 40px; text-align: center; }
+    figcaption { font-size: 0.93rem; color: #666; margin-top: 8px; font-style: italic; }
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 27px 0 22px;
+      text-align: center;
+      font-size: 1.04rem;
+    }
+    .footer-nav { margin-bottom: 13px; display: flex; justify-content: center; flex-wrap: wrap; gap: 2.3em; }
+    .footer-nav a { color: #fff; font-weight: 500; transition: color 0.2s; }
+    .footer-nav a:hover { color: #61dafb; }
+    .footer-logo { display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+    .footer-logo img { height: 32px; margin-right: 10px; }
+    .footer-logo .brand-footer { font-weight: bold; color: #61dafb; font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-container">
+      <a href="https://getonejob.in/index.html#"><img src="https://getonejob.in/logo.PNG" alt="ONEJOB Logo" /></a>
+      <span class="brand-title">ONE JOB</span>
+    </div>
+    <div class="nav-links">
+      <a href="https://getonejob.in/index.html#" class="active">Home</a>
+      <a href="https://www.getonejob.in/blog.html">Blog</a>
+      <a href="https://getonejob.in/services.html">Services</a>
+      <a href="https://www.getonejob.in/certificate.html">Certificates</a>
+      <a href="https://ai.getonejob.in/" class="ai-btn" target="_blank" rel="noopener noreferrer">ONEJOB AI Services</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>How AI Analyzes Job Descriptions to Tailor Your Resume</h1>
+    <p>Artificial intelligence is revolutionizing job applications by reading job descriptions the way a recruiter—and an algorithm—would. But how does it work? Discover how next-gen AI tools dissect descriptions and help you build the resume that gets noticed.</p>
+
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#how-ai-scans">How AI Scans and Understands Job Descriptions</a></li>
+      <li><a href="#table-ai-vs-manual">AI Analysis vs. Manual Customization Table</a></li>
+      <li><a href="#tailoring-process">The AI Tailoring Process Step-by-Step</a></li>
+      <li><a href="#best-practices">Best Practices for AI-Personalized Resumes</a></li>
+      <li><a href="#faqs">FAQs</a></li>
+      <li><a href="#cta">Get Your AI-Tailored Resume Now</a></li>
+    </ul>
+
+    <section id="how-ai-scans">
+      <h2>How AI Scans and Understands Job Descriptions</h2>
+      <ul>
+        <li><b>Keyword Extraction:</b> AI parses job postings to identify essential skills, qualifications, and action verbs repeatedly used by employers.</li>
+        <li><b>Natural Language Processing (NLP):</b> AI understands the intent behind requirements, not just matching exact words.</li>
+        <li><b>Responsibility & Achievement Detection:</b> AI pinpoints requested achievements (“delivered projects on time”) and aligns your experience accordingly.</li>
+        <li><b>Prioritization:</b> The most valued qualifications are highlighted, guiding which elements to emphasize in your resume.</li>
+        <li><b>ATS-Optimization:</b> Suggestions are made to help your resume pass Applicant Tracking Systems by reflecting the core language of the job ad.</li>
+      </ul>
+    </section>
+
+    <section id="table-ai-vs-manual">
+      <h2>AI Analysis vs. Manual Customization Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Step</th>
+            <th>AI-Driven Resume Customization</th>
+            <th>Manual Customization</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Scan for Keywords</td>
+            <td>Automatic, uses large datasets</td>
+            <td>Manual review, high chance of missing key terms</td>
+          </tr>
+          <tr>
+            <td>Analyze Job Intent</td>
+            <td>NLP interprets implied requirements</td>
+            <td>Subjective, depends on applicant’s experience</td>
+          </tr>
+          <tr>
+            <td>Match Skills & Experience</td>
+            <td>Suggests tailored bullet points</td>
+            <td>Manually edit and rewrite</td>
+          </tr>
+          <tr>
+            <td>ATS Compatibility</td>
+            <td>Optimizes layout/content automatically</td>
+            <td>User must be familiar with ATS needs</td>
+          </tr>
+          <tr>
+            <td>Personalization</td>
+            <td>Recommends targeted phrasing for each job</td>
+            <td>Risk of generic or irrelevant sections</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="tailoring-process">
+      <h2>The AI Tailoring Process Step-by-Step</h2>
+      <ol>
+        <li>
+          <b>Input Job Description:</b>
+          <br>Paste or upload your target job ad into the AI resume tool.
+        </li>
+        <li>
+          <b>Analysis:</b>
+          <br>The AI scans the posting, extracting skills, requirements, and priority qualifications.
+        </li>
+        <li>
+          <b>Resume Comparison:</b>
+          <br>The system compares your existing resume to the job description, scoring relevancy and spotting missing elements.
+        </li>
+        <li>
+          <b>Keyword and Skill Suggestions:</b>
+          <br>AI recommends keywords, phrasing, and content based on what employers look for in similar postings.
+        </li>
+        <li>
+          <b>ATS-Check:</b>
+          <br>The builder warns if your resume may get blocked and offers fixes.
+        </li>
+        <li>
+          <b>Personalized Recommendations:</b>
+          <br>AI proposes changes to skills, experiences, and achievements tailored for that specific job.
+        </li>
+        <li>
+          <b>Finalize & Export:</b>
+          <br>After tweaking or accepting suggestions, export your ATS-ready, job-matched resume.
+        </li>
+      </ol>
+      <figure>
+        <svg width="200" height="200" viewBox="0 0 200 200" aria-labelledby="svgdesc" role="img" xmlns="http://www.w3.org/2000/svg">
+          <title id="svgdesc">Graphic illustrating AI analyzing job descriptions and customizing resumes</title>
+          <circle cx="100" cy="100" r="90" fill="#e7f2fb"/>
+          <rect x="65" y="70" width="70" height="50" rx="8" fill="#61dafb"/>
+          <rect x="80" y="80" width="40" height="10" rx="4" fill="#fff"/>
+          <rect x="80" y="95" width="38" height="7" rx="3" fill="#fff"/>
+          <rect x="120" y="95" width="10" height="7" rx="3" fill="#55e37e"/>
+          <rect x="80" y="107" width="40" height="7" rx="3" fill="#fff"/>
+        </svg>
+        <figcaption>
+          AI-powered tools extract relevant keywords and achievements from job ads to tailor your resume.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="best-practices">
+      <h2>Best Practices for AI-Personalized Resumes</h2>
+      <ul>
+        <li>Always review and personalize AI suggestions—let your authentic achievements and voice shine through.</li>
+        <li>Save different versions tailored to distinct jobs or industries.</li>
+        <li>Quantify successes, using numbers and facts the AI finds relevant.</li>
+        <li>Proofread for errors or awkward phrasing AI cannot spot.</li>
+        <li>Choose templates that are visually appealing but remain ATS-compliant.</li>
+      </ul>
+    </section>
+
+    <section id="faqs">
+      <h2>FAQs</h2>
+      <dl>
+        <dt><b>Will using AI make every resume look the same?</b></dt>
+        <dd>Not if you edit and personalize the AI suggestions. Use the technology as a base, then showcase what makes you unique.</dd>
+        <dt><b>Is AI-powered tailoring better than manual editing?</b></dt>
+        <dd>AI excels at analysis, keyword optimization, and ATS prep, while manual edits add the personal touch. Combining both achieves the strongest results.</dd>
+        <dt><b>Can AI help with any industry?</b></dt>
+        <dd>Yes, AI adapts to a wide range of industries—just ensure you add industry-specific metrics and skills as needed.</dd>
+      </dl>
+    </section>
+
+    <section id="cta">
+      <h2>Get Your AI-Tailored Resume Now</h2>
+      <p>Want to land more interviews? Let AI match your skills to every job description and build a resume recruiters love.</p>
+      <p style="text-align:center;">
+        <a href="https://ai.getonejob.in/" target="_blank" rel="noopener noreferrer" class="cta-button"
+           role="button" aria-label="Build your job-matched resume with AI at ai.getonejob.in">
+          Try ONEJOB AI Resume Builder Now
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">
+      <a href="https://getonejob.in/index.html#"><img src="https://getonejob.in/logo.PNG" alt="ONEJOB Logo Footer" /></a>
+      <span class="brand-footer">ONE JOB</span>
+    </div>
+    <nav class="footer-nav">
+      <a href="https://getonejob.in/index.html#">Home</a>
+      <a href="https://www.getonejob.in/blog.html">Blog</a>
+      <a href="https://getonejob.in/services.html">Services</a>
+      <a href="https://www.getonejob.in/certificate.html">Certificates</a>
+    </nav>
+    <p>&copy; 2025 <a href="https://ai.getonejob.in/" style="color:#61dafb;text-decoration:none;">ai.getonejob.in</a>. All rights reserved.</p>
+  </footer>
+</body>
+</html>
