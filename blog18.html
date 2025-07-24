@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How AI Identifies Your Transferable Skills | AI Resume Builder</title>
+  <meta name="description" content="Learn how AI-powered tools recognize and highlight your transferable skills during resume creation. Discover smart strategies for showcasing your cross-industry value in today's job market." />
+  <meta name="keywords" content="AI resume, transferable skills, resume builder, AI job search, resume optimization, AI career tools, job skills" />
+  <meta name="author" content="ai.getonejob.in" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; margin: 0; background: #f4f7fa; color: #222; line-height: 1.6; }
+    a { color: #2960ff; text-decoration: none; transition: color 0.3s ease; }
+    a:hover, a:focus { color: #0039cc; outline: none; }
+    .navbar {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 6vw 15px 3vw;
+      border-bottom: 1px solid #e5e8ec;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.025);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .navbar .logo-container { display: flex; align-items: center; }
+    .navbar .logo-container img { height: 38px; width: auto; margin-right: 10px; }
+    .navbar .brand-title { font-weight: 700; font-size: 1.2rem; color: #1d3557; }
+    .navbar .nav-links { display: flex; align-items: center; gap: 1.5em; }
+    .navbar .nav-links a { color: #23567a; font-weight: 500; font-size: 1.04rem; padding: 6px 0; border-radius: 3px; transition: background 0.18s; }
+    .navbar .nav-links a:hover, .navbar .nav-links a.active { background: #e7f2fb; color: #2960ff; }
+    .ai-btn { background: #2960ff; color: #fff !important; font-weight: 700; padding: 7px 20px; border-radius: 5px; margin-left: 14px; box-shadow: 0 2px 3px rgba(35,86,122,0.10); transition: background 0.18s; }
+    .ai-btn:hover, .ai-btn:focus { background: #0039cc; }
+    main {
+      max-width: 900px;
+      background: white;
+      margin: 30px auto 60px;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+    }
+    h1, h2, h3 {
+      color: #23567a;
+      margin-top: 1.4em;
+      margin-bottom: 0.4em;
+      line-height: 1.2;
+    }
+    h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 0.7em;}
+    h2 { font-size: 2.1rem; }
+    h3 { font-size: 1.32rem; }
+    p { font-size: 1.1rem; margin: 0 0 1.2em 0; color: #333; }
+    ul, ol { padding-left: 20px; margin-bottom: 1.2em; color: #444; }
+    li { margin-bottom: 0.55em; font-size: 1.04rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1.8em 0; font-size: 1rem; }
+    th, td { padding: 12px 15px; border: 1px solid #ccc; text-align: left; }
+    th { background-color: #e7f2fb; color: #1f497d; font-weight: 700; }
+    .cta-button {
+      display: inline-block;
+      background-color: #2960ff;
+      color: #fff !important;
+      padding: 14px 36px;
+      font-size: 1.25rem;
+      border-radius: 30px;
+      font-weight: 700;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+      user-select: none;
+      text-decoration: none;
+    }
+    .cta-button:hover, .cta-button:focus { background-color: #0039cc; outline: none; }
+    @media (max-width: 720px) {
+      main { margin: 20px 15px 50px; padding: 25px 11px; }
+      h1 { font-size: 2.08rem; }
+      h2 { font-size: 1.56rem; }
+      h3 { font-size: 1.01rem; }
+      .cta-button { font-size: 1rem; padding: 12px 28px; }
+      table { font-size: 0.9rem; }
+    }
+    figure { max-width: 200px; margin: 20px auto 40px; text-align: center; }
+    figcaption { font-size: 0.93rem; color: #666; margin-top: 8px; font-style: italic; }
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 27px 0 22px;
+      text-align: center;
+      font-size: 1.04rem;
+    }
+    .footer-nav { margin-bottom: 13px; display: flex; justify-content: center; flex-wrap: wrap; gap: 2.3em; }
+    .footer-nav a { color: #fff; font-weight: 500; transition: color 0.2s; }
+    .footer-nav a:hover { color: #61dafb; }
+    .footer-logo { display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+    .footer-logo img { height: 32px; margin-right: 10px; }
+    .footer-logo .brand-footer { font-weight: bold; color: #61dafb; font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-container">
+      <a href="https://getonejob.in/index.html#"><img src="https://getonejob.in/logo.PNG" alt="ONEJOB Logo" /></a>
+      <span class="brand-title">ONE JOB</span>
+    </div>
+    <div class="nav-links">
+      <a href="https://getonejob.in/index.html#" class="active">Home</a>
+      <a href="https://www.getonejob.in/blog.html">Blog</a>
+      <a href="https://getonejob.in/services.html">Services</a>
+      <a href="https://www.getonejob.in/certificate.html">Certificates</a>
+      <a href="https://ai.getonejob.in/" class="ai-btn" target="_blank" rel="noopener noreferrer">ONEJOB AI Services</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>How AI Identifies Your Transferable Skills</h1>
+    <p>Transferable skills—such as communication, leadership, critical thinking, and adaptability—are the secret weapon for landing new roles or making industry pivots. Thanks to advanced artificial intelligence, resume builders and job search platforms are now experts at finding and showcasing these capabilities across your career history. See how AI reveals your full potential and maximizes every application.</p>
+
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#what-are-transferable-skills">What Are Transferable Skills?</a></li>
+      <li><a href="#how-ai-identifies">How AI Recognizes Transferable Skills</a></li>
+      <li><a href="#compare-table">Human vs. AI Ability to Identify Transferable Skills</a></li>
+      <li><a href="#step-by-step">How AI Detects and Highlights Your Skills: Step-by-Step</a></li>
+      <li><a href="#best-practices">Best Practices for Maximizing Transferable Skills with AI</a></li>
+      <li><a href="#faqs">Frequently Asked Questions</a></li>
+      <li><a href="#cta">Showcase Your Transferable Skills Now</a></li>
+    </ul>
+
+    <section id="what-are-transferable-skills">
+      <h2>What Are Transferable Skills?</h2>
+      <ul>
+        <li>Core abilities that are valuable across numerous roles and industries—think leadership, problem-solving, collaboration, time management, and digital literacy.</li>
+        <li>Also known as “portable skills” or “core competencies.”</li>
+        <li>Key when changing careers, applying for non-traditional jobs, or advancing in dynamic workplaces.</li>
+      </ul>
+    </section>
+
+    <section id="how-ai-identifies">
+      <h2>How AI Recognizes Transferable Skills</h2>
+      <ul>
+        <li><b>Natural Language Processing (NLP):</b> AI scans your resume, cover letters, and even social media for statements and bullet points demonstrating cross-functional skills.</li>
+        <li><b>Contextual Analysis:</b> AI interprets actions (“facilitated,” “led a team,” “solved problems”) as signs of sought-after skills—even if the role or industry was different.</li>
+        <li><b>Keyword & Pattern Matching:</b> Recognizes not just specific words, but the context of your achievements, mapping them to skills relevant in other fields.</li>
+        <li><b>Industry Translation:</b> Converts industry-specific accomplishments into universal skills that employers in unrelated fields seek.</li>
+        <li><b>Skill Clustering:</b> Groups related achievements to highlight themes—like “project management” or “analytical thinking”—that may not appear as stand-alone entries.</li>
+      </ul>
+    </section>
+
+    <section id="compare-table">
+      <h2>Human vs. AI Ability to Identify Transferable Skills</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>Human Review</th>
+            <th>AI-Powered Analysis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bias Risk</td>
+            <td>Personal preferences & limited experience may overlook some skills</td>
+            <td>Data-driven; uncovers hidden skills using patterns from millions of resumes</td>
+          </tr>
+          <tr>
+            <td>Speed</td>
+            <td>Manual, often slow</td>
+            <td>Instantaneous; analyzes entire documents in seconds</td>
+          </tr>
+          <tr>
+            <td>Crossover Abilities</td>
+            <td>May focus on direct job match only</td>
+            <td>Finds skills applicable in multiple industries/jobs</td>
+          </tr>
+          <tr>
+            <td>Translation to New Industries</td>
+            <td>Manual rewrite required</td>
+            <td>Automated suggestions and phrase swaps for new fields</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="step-by-step">
+      <h2>How AI Detects and Highlights Your Skills: Step-by-Step</h2>
+      <ol>
+        <li>
+          <b>Upload Your Info:</b> Resume, job history, or profile is entered into an AI-powered builder.
+        </li>
+        <li>
+          <b>Phrases & Context Scanning:</b> AI reviews your past experiences, looking for phrases that suggest skills valued in other industries.
+        </li>
+        <li>
+          <b>Compare to Job Description:</b> Tool analyzes the requirements of the role you want, matching your background’s portable skills.
+        </li>
+        <li>
+          <b>Suggests Skill Highlights:</b> AI highlights or rewrites bullets to showcase transferable competencies—e.g., “coordinated logistics” becomes “strong project management.”
+        </li>
+        <li>
+          <b>Industry Language Update:</b> AI translates niche or company-specific terms, enabling broader recognition by different hiring audiences.
+        </li>
+        <li>
+          <b>Final Review & Edit:</b> You tailor the suggestions, ensuring they reflect your true value in your new application context.
+        </li>
+      </ol>
+      <figure>
+        <svg width="200" height="200" viewBox="0 0 200 200" aria-labelledby="svgdesc" role="img" xmlns="http://www.w3.org/2000/svg">
+          <title id="svgdesc">AI highlighting and categorizing transferable skills in a resume</title>
+          <circle cx="100" cy="100" r="90" fill="#e7f2fb"/>
+          <rect x="65" y="70" width="70" height="55" rx="9" fill="#84d8ff"/>
+          <rect x="80" y="85" width="40" height="10" rx="4" fill="#fff"/>
+          <rect x="80" y="101" width="35" height="7" rx="3" fill="#fff"/>
+          <rect x="120" y="101" width="10" height="7" rx="3" fill="#2960ff"/>
+          <rect x="80" y="115" width="40" height="7" rx="3" fill="#fff"/>
+        </svg>
+        <figcaption>
+          AI visually organizes and relabels your experience to focus on universal, cross-role skills.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="best-practices">
+      <h2>Best Practices for Maximizing Transferable Skills with AI</h2>
+      <ul>
+        <li><b>Edit for Authenticity:</b> AI highlights possibilities, but you should rewrite for honesty and relevance.</li>
+        <li><b>Focus on Results & Context:</b> Show how your skills delivered value across teams, not just titles.</li>
+        <li><b>Quantify Achievements:</b> Use numbers or facts where possible (“trained 50+ staff in new systems”).</li>
+        <li><b>Align with Job Descriptions:</b> Choose the transferable skills most emphasized in each posting.</li>
+        <li><b>Balance Hard & Soft Skills:</b> Blend technical strengths with communication, problem-solving, and leadership traits.</li>
+      </ul>
+    </section>
+    
+    <section id="faqs">
+      <h2>Frequently Asked Questions</h2>
+      <dl>
+        <dt><b>Which transferable skills do AI tools recognize best?</b></dt>
+        <dd>Commonly identified: communication, problem-solving, organization, project management, leadership, analytical skills, adaptability, and digital literacy.</dd>
+        <dt><b>Does AI always interpret my experience correctly?</b></dt>
+        <dd>AI can misclassify context at times—always review and personalize skill suggestions to reflect your real impact.</dd>
+        <dt><b>Can AI tailor my resume for a career change?</b></dt>
+        <dd>Yes! AI excels at reframing experience to fit new fields—just review and add specifics as needed.</dd>
+        <dt><b>Is the process different for soft vs. hard skills?</b></dt>
+        <dd>AI can extract both, but hard skills may require more manual entry, while soft/transferable skills often come from phrasing and impact statements.</dd>
+      </dl>
+    </section>
+
+    <section id="cta">
+      <h2>Showcase Your Transferable Skills Now</h2>
+      <p>Ready to let AI reveal your potential? Discover, highlight, and personalize your cross-industry competencies—and turn every job change into an opportunity.</p>
+      <p style="text-align:center;">
+        <a href="https://ai.getonejob.in/" target="_blank" rel="noopener noreferrer" class="cta-button"
+           role="button" aria-label="Build your skill-focused resume with AI at ai.getonejob.in">
+          Try ONEJOB AI Resume Builder Today
+        </a>
+      </p>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-logo">
+      <a href="https://getonejob.in/index.html#"><img src="https://getonejob.in/logo.PNG" alt="ONEJOB Logo Footer" /></a>
+      <span class="brand-footer">ONE JOB</span>
+    </div>
+    <nav class="footer-nav">
+      <a href="https://getonejob.in/index.html#">Home</a>
+      <a href="https://www.getonejob.in/blog.html">Blog</a>
+      <a href="https://getonejob.in/services.html">Services</a>
+      <a href="https://www.getonejob.in/certificate.html">Certificates</a>
+    </nav>
+    <p>&copy; 2025 <a href="https://ai.getonejob.in/" style="color:#61dafb;text-decoration:none;">ai.getonejob.in</a>. All rights reserved.</p>
+  </footer>
+</body>
+</html>
