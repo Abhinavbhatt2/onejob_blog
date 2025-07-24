@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Common Mistakes in AI-Generated Resumes and How to Avoid Them | AI Resume Builder</title>
+  <meta name="description" content="Discover the most common errors people make with AI-generated resumes and how to fix them. Learn to craft an ATS-ready, genuine, and impactful resume using artificial intelligence." />
+  <meta name="keywords" content="AI resume, resume mistakes, job search, AI resume builder, applicant tracking system, ATS, resume writing tips" />
+  <meta name="author" content="ai.getonejob.in" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; margin: 0; background: #f4f7fa; color: #222; line-height: 1.6; }
+    a { color: #2960ff; text-decoration: none; transition: color 0.3s ease; }
+    a:hover, a:focus { color: #0039cc; outline: none; }
+    .navbar {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 6vw 15px 3vw;
+      border-bottom: 1px solid #e5e8ec;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.025);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .navbar .logo-container { display: flex; align-items: center; }
+    .navbar .logo-container img { height: 38px; width: auto; margin-right: 10px; }
+    .navbar .brand-title { font-weight: 700; font-size: 1.2rem; color: #1d3557; }
+    .navbar .nav-links { display: flex; align-items: center; gap: 1.5em; }
+    .navbar .nav-links a { color: #23567a; font-weight: 500; font-size: 1.04rem; padding: 6px 0; border-radius: 3px; transition: background 0.18s; }
+    .navbar .nav-links a:hover, .navbar .nav-links a.active { background: #e7f2fb; color: #2960ff; }
+    .ai-btn { background: #2960ff; color: #fff !important; font-weight: 700; padding: 7px 20px; border-radius: 5px; margin-left: 14px; box-shadow: 0 2px 3px rgba(35,86,122,0.10); transition: background 0.18s; }
+    .ai-btn:hover, .ai-btn:focus { background: #0039cc; }
+    main {
+      max-width: 900px;
+      background: white;
+      margin: 30px auto 60px;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+    }
+    h1, h2, h3 {
+      color: #23567a;
+      margin-top: 1.4em;
+      margin-bottom: 0.4em;
+      line-height: 1.2;
+    }
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 0.7em;
+    }
+    h2 { font-size: 2.1rem; }
+    h3 { font-size: 1.32rem; }
+    p { font-size: 1.1rem; margin: 0 0 1.2em 0; color: #333; }
+    ul, ol { padding-left: 20px; margin-bottom: 1.2em; color: #444; }
+    li { margin-bottom: 0.55em; font-size: 1.04rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1.8em 0; font-size: 1rem; }
+    th, td { padding: 12px 15px; border: 1px solid #ccc; text-align: left; }
+    th { background-color: #e7f2fb; color: #1f497d; font-weight: 700; }
+    .cta-button {
+      display: inline-block;
+      background-color: #2960ff;
+      color: #fff !important;
+      padding: 14px 36px;
+      font-size: 1.25rem;
+      border-radius: 30px;
+      font-weight: 700;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+      user-select: none;
+      text-decoration: none;
+    }
+    .cta-button:hover, .cta-button:focus { background-color: #0039cc; outline: none; }
+    @media (max-width: 720px) {
+      main { margin: 20px 15px 50px; padding: 25px 11px; }
+      h1 { font-size: 2.08rem; }
+      h2 { font-size: 1.56rem; }
+      h3 { font-size: 1.01rem; }
+      .cta-button { font-size: 1rem; padding: 12px 28px; }
+      table { font-size: 0.9rem; }
+    }
+    figure { max-width: 200px; margin: 20px auto 40px; text-align: center; }
+    figcaption { font-size: 0.93rem; color: #666; margin-top: 8px; font-style: italic; }
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 27px 0 22px;
+      text-align: center;
+      font-size: 1.04rem;
+    }
+    .footer-nav { margin-bottom: 13px; display: flex; justify-content: center; flex-wrap: wrap; gap: 2.3em; }
+    .footer-nav a { color: #fff; font-weight: 500; transition: color 0.2s; }
+    .footer-nav a:hover { color: #61dafb; }
+    .footer-logo { display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+    .footer-logo img { height: 32px; margin-right: 10px; }
+    .footer-logo .brand-footer { font-weight: bold; color: #61dafb; font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-container">
+      <a href="https://getonejob.in/index.html#"><img src="https://getonejob.in/logo.PNG" alt="ONEJOB Logo" /></a>
+      <span class="brand-title">ONE JOB</span>
+    </div>
+    <div class="nav-links">
+      <a href="https://getonejob.in/index.html#" class="active">Home</a>
+      <a href="https://www.getonejob.in/blog.html">Blog</a>
+      <a href="https://getonejob.in/services.html">Services</a>
+      <a href="https://www.getonejob.in/certificate.html">Certificates</a>
+      <a href="https://ai.getonejob.in/" class="ai-btn" target="_blank" rel="noopener noreferrer">ONEJOB AI Services</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Common Mistakes in AI-Generated Resumes and How to Avoid Them</h1>
+    <p>AI-powered resume builders are changing the job hunt landscape. But even the best technology can lead to errors if misused. Avoiding the most frequent pitfalls ensures your resume genuinely stands out and gets noticed by both algorithms and recruiters.</p>
+    
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#top-mistakes">Top AI-Generated Resume Mistakes</a></li>
+      <li><a href="#mistakes-table">Mistakes & Solutions at a Glance</a></li>
+      <li><a href="#detailed-tips">How to Avoid These Mistakes</a></li>
+      <li><a href="#faqs">FAQs on AI-Generated Resumes</a></li>
+      <li><a href="#cta">Build a Better AI Resume, Stress-Free!</a></li>
+    </ul>
+    
+    <section id="top-mistakes">
+      <h2>Top AI-Generated Resume Mistakes</h2>
+      <ul>
+        <li><b>Leaving Generic AI Text Unedited:</b> Many users copy suggestions directly, forgetting that multiple candidates received similar output.</li>
+        <li><b>Poor Keyword Usage:</b> Relying solely on suggested keywords—even if they're a poor fit—can hurt the resume’s authenticity.</li>
+        <li><b>Overusing Buzzwords & Clichés:</b> Filling a resume with generic terms like "team player" or "synergy" without supporting context.</li>
+        <li><b>Formatting Issues:</b> Ignoring AI template warnings, leading to inconsistent spacing, headings, or section order.</li>
+        <li><b>Missing Personal Details:</b> Failing to input unique achievements, quantifiable results, or personalization.</li>
+        <li><b>Ignoring ATS Guidelines:</b> Including graphics, tables, or columns that some applicant tracking systems can't read.</li>
+        <li><b>Overly Long Resumes:</b> AI suggestions may create sections or bullet points that bloat content without adding value.</li>
+        <li><b>Blind Trust in AI Accuracy:</b> Not proofreading for errors, contradictions, or outdated information.</li>
+      </ul>
+    </section>
+
+    <section id="mistakes-table">
+      <h2>Mistakes & Solutions at a Glance</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Common Mistake</th>
+            <th>How It Hurts You</th>
+            <th>How to Fix It</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Leaving generic suggestions in place</td>
+            <td>Looks robotic and non-unique to recruiters</td>
+            <td>Always rewrite AI text in your own style</td>
+          </tr>
+          <tr>
+            <td>Poor keyword relevance</td>
+            <td>Resume matches the wrong jobs or fails ATS</td>
+            <td>Double-check all keywords for true relevance</td>
+          </tr>
+          <tr>
+            <td>Overpacked with buzzwords</td>
+            <td>Appears shallow; lacks substance</td>
+            <td>Provide real achievements behind claims</td>
+          </tr>
+          <tr>
+            <td>Ignoring formatting errors</td>
+            <td>ATS or humans discard your resume</td>
+            <td>Use clean, simple templates and review visual output</td>
+          </tr>
+          <tr>
+            <td>Missing personalization</td>
+            <td>Fails to stand out from similar resumes</td>
+            <td>Add metrics, awards, and career stories</td>
+          </tr>
+          <tr>
+            <td>Graphics or tables not ATS-friendly</td>
+            <td>Resume content may be skipped by systems</td>
+            <td>Stick to plain text for key sections</td>
+          </tr>
+          <tr>
+            <td>Lack of proofing or fact-check</td>
+            <td>Typos, contradictions, or old data hurt credibility</td>
+            <td>Manually review for errors and accuracy</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="detailed-tips">
+      <h2>How to Avoid These Mistakes</h2>
+      <ul>
+        <li><b>Edit Everything:</b> Never submit AI-generated content word-for-word—rewrite to capture your unique experience and voice.</li>
+        <li><b>Targeted Keywords:</b> Research the job description for the most important terms, only using AI suggestions that genuinely fit your background.</li>
+        <li><b>Show, Don’t Tell:</b> Replace generic phrases with specific, actionable examples and measurable accomplishments.</li>
+        <li><b>Clean Formatting:</b> Preview the finished resume on desktop and mobile; keep section headers and spacing simple and consistent.</li>
+        <li><b>ATS Compliance:</b> Stick to standard layouts, fonts, and avoid complex graphics or tables in your main content.</li>
+        <li><b>Proofread & Update:</b> Reread every section for accuracy, clarity, and to remove outdated information before exporting your resume.</li>
+        <li><b>Limit Length:</b> Remove redundant or weak bullet points to keep your resume concise and relevant.</li>
+      </ul>
+      <figure>
+        <svg width="200" height="200" viewBox="0 0 200 200" aria-labelledby="svgdesc" role="img" xmlns="http://www.w3.org/2000/svg">
+          <title id="svgdesc">Illustration highlighting resume editing and error checking</title>
+          <circle cx="100" cy="100" r="90" fill="#e7f2fb"/>
+          <rect x="65" y="70" width="70" height="50" rx="8" fill="#ffcf54"/>
+          <rect x="80" y="80" width="40" height="10" rx="4" fill="#fff"/>
+          <rect x="80" y="95" width="40" height="7" rx="3" fill="#fff"/>
+          <rect x="80" y="107" width="36" height="7" rx="3" fill="#fff"/>
+          <rect x="122" y="107" width="8" height="7" rx="3" fill="#f15b5b"/>
+        </svg>
+        <figcaption>Reviewing and customizing AI-generated resumes fixes common mistakes.</figcaption>
+      </figure>
+    </section>
+    
+    <section id="faqs">
+      <h2>FAQs on AI-Generated Resumes</h2>
+      <dl>
+        <dt><b>Will employers know if I used AI for my resume?</b></dt>
+        <dd>Not if you personalize the result. AI resumes are only obvious when generic, template-like phrasing is left unchanged.</dd>
+        <dt><b>Can AI tools guarantee my resume gets seen?</b></dt>
+        <dd>No AI tool can guarantee this; however, following ATS guidelines and using targeted keywords improves your odds.</dd>
+        <dt><b>What if my resume still gets rejected?</b></dt>
+        <dd>Continue to refine content for relevance and clarity. Seek human feedback for another perspective alongside AI advice.</dd>
+      </dl>
+    </section>
+    
+    <section id="cta">
+      <h2>Build a Better AI Resume, Stress-Free!</h2>
+      <p>Experience the advantages of AI for resume creation—without the most common mistakes! Customize every section, highlight what makes you unique, and get ready to impress.</p>
+      <p style="text-align:center;">
+        <a href="https://ai.getonejob.in/" target="_blank" rel="noopener noreferrer" class="cta-button"
+           role="button" aria-label="Build your resume with AI at ai.getonejob.in">
+          Create Your Optimized AI Resume Now
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">
+      <a href="https://getonejob.in/index.html#"><img src="https://getonejob.in/logo.PNG" alt="ONEJOB Logo Footer" /></a>
+      <span class="brand-footer">ONE JOB</span>
+    </div>
+    <nav class="footer-nav">
+      <a href="https://getonejob.in/index.html#">Home</a>
+      <a href="https://www.getonejob.in/blog.html">Blog</a>
+      <a href="https://getonejob.in/services.html">Services</a>
+      <a href="https://www.getonejob.in/certificate.html">Certificates</a>
+      <a href="https://ai.getonejob.in/" class="ai-btn" target="_blank" rel="noopener noreferrer">ONEJOB AI Services</a>
+    </nav>
+    <p>&copy; 2025 <a href="https://ai.getonejob.in/" style="color:#61dafb;text-decoration:none;">ai.getonejob.in</a>. All rights reserved.</p>
+  </footer>
+</body>
+</html>
