@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How AI Handles Multiple Job Titles on One Resume | AI Resume Builder</title>
+  <meta name="description" content="Explore how artificial intelligence organizes and optimizes resumes with multiple job titles. Learn smart sectioning, narrative blending, and AI techniques that make career diversity an asset for recruiters." />
+  <meta name="keywords" content="AI resume, multiple job titles, combination resume, career switcher, resume builder, hybrid resume, resume optimization, job search AI" />
+  <meta name="author" content="ai.getonejob.in" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; margin: 0; background: #f4f7fa; color: #222; line-height: 1.6; }
+    a { color: #2960ff; text-decoration: none; transition: color 0.3s ease; }
+    a:hover, a:focus { color: #0039cc; outline: none; }
+    .navbar {
+      background: #fff;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 15px 6vw 15px 3vw;
+      border-bottom: 1px solid #e5e8ec;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.025);
+      position: sticky; top: 0; z-index: 10;
+    }
+    .navbar .logo-container { display: flex; align-items: center; }
+    .navbar .logo-container img { height: 38px; width: auto; margin-right: 10px; }
+    .navbar .brand-title { font-weight: 700; font-size: 1.2rem; color: #1d3557; }
+    .navbar .nav-links { display: flex; align-items: center; gap: 1.5em; }
+    .navbar .nav-links a { color: #23567a; font-weight: 500; font-size: 1.04rem; padding: 6px 0; border-radius: 3px; transition: background 0.18s; }
+    .navbar .nav-links a:hover, .navbar .nav-links a.active { background: #e7f2fb; color: #2960ff; }
+    .ai-btn { background: #2960ff; color: #fff !important; font-weight: 700; padding: 7px 20px; border-radius: 5px; margin-left: 14px; box-shadow: 0 2px 3px rgba(35,86,122,0.10); transition: background 0.18s; }
+    .ai-btn:hover, .ai-btn:focus { background: #0039cc; }
+    main {
+      max-width: 900px;
+      background: white;
+      margin: 30px auto 60px;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+    }
+    h1, h2, h3 {
+      color: #23567a;
+      margin-top: 1.4em;
+      margin-bottom: 0.4em;
+      line-height: 1.2;
+    }
+    h1 {
+      font-size: 2.6rem; font-weight: 800; margin-bottom: 0.7em;
+    }
+    h2 { font-size: 2.1rem; }
+    h3 { font-size: 1.32rem; }
+    p { font-size: 1.1rem; margin: 0 0 1.2em 0; color: #333; }
+    ul, ol { padding-left: 20px; margin-bottom: 1.2em; color: #444; }
+    li { margin-bottom: 0.55em; font-size: 1.04rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1.8em 0; font-size: 1rem; }
+    th, td { padding: 12px 15px; border: 1px solid #ccc; text-align: left; }
+    th { background-color: #e7f2fb; color: #1f497d; font-weight: 700; }
+    .cta-button {
+      display: inline-block; background-color: #2960ff; color: #fff !important;
+      padding: 14px 36px; font-size: 1.25rem; border-radius: 30px;
+      font-weight: 700; text-align: center; border: none; cursor: pointer;
+      transition: background-color 0.3s ease; margin-top: 1rem; user-select: none; text-decoration: none;
+    }
+    .cta-button:hover, .cta-button:focus { background-color: #0039cc; outline: none; }
+    @media (max-width: 720px) {
+      main { margin: 20px 15px 50px; padding: 25px 11px; }
+      h1 { font-size: 2.08rem; }
+      h2 { font-size: 1.56rem; }
+      h3 { font-size: 1.01rem; }
+      .cta-button { font-size: 1rem; padding: 12px 28px; }
+      table { font-size: 0.9rem; }
+    }
+    figure { max-width: 200px; margin: 20px auto 40px; text-align: center; }
+    figcaption { font-size: 0.93rem; color: #666; margin-top: 8px; font-style: italic; }
+    footer {
+      background: #222; color: #fff; padding: 27px 0 22px;
+      text-align: center; font-size: 1.04rem;
+    }
+    .footer-nav { margin-bottom: 13px; display: flex; justify-content: center; flex-wrap: wrap; gap: 2.3em; }
+    .footer-nav a { color: #fff; font-weight: 500; transition: color 0.2s; }
+    .footer-nav a:hover { color: #61dafb; }
+    .footer-logo { display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+    .footer-logo img { height: 32px; margin-right: 10px; }
+    .footer-logo .brand-footer { font-weight: bold; color: #61dafb; font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-container">
+      <a href="https://getonejob.in/index.html#"><img src="https://getonejob.in/logo.PNG" alt="ONEJOB Logo" /></a>
+      <span class="brand-title">ONE JOB</span>
+    </div>
+    <div class="nav-links">
+      <a href="https://getonejob.in/index.html#">Home</a>
+      <a href="https://www.getonejob.in/blog.html" class="active">Blog</a>
+      <a href="https://getonejob.in/services.html">Services</a>
+      <a href="https://www.getonejob.in/certificate.html">Certificates</a>
+      <a href="https://ai.getonejob.in/" class="ai-btn" target="_blank" rel="noopener noreferrer">ONEJOB AI Services</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>How AI Handles Multiple Job Titles on One Resume</h1>
+    <p>
+      Having worn several hats—whether through career changes, freelancing, or working at startups—can make your resume powerful but challenging to structure. AI-powered resume builders now make it seamless to combine, organize, and present multiple job titles to recruiters, turning career diversity into a true advantage.
+    </p>
+
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#why-multititle-matters">Why Multiple Job Titles Need Smart Organization</a></li>
+      <li><a href="#ai-multititle-process">How AI Optimizes Multi-Title Resumes</a></li>
+      <li><a href="#features-table">Key AI Features for Multiple Job Titles</a></li>
+      <li><a href="#best-strategies">Best Practices for Multi-Title Resume Success</a></li>
+      <li><a href="#faqs">Frequently Asked Questions</a></li>
+      <li><a href="#cta">Get Your Multi-Title Resume Optimized by AI</a></li>
+    </ul>
+
+    <section id="why-multititle-matters">
+      <h2>Why Multiple Job Titles Need Smart Organization</h2>
+      <ul>
+        <li><b>Confused narrative hurts:</b> Mixed, overlapping job titles can confuse recruiters and ATS bots, diluting your impact.</li>
+        <li><b>Target role focus:</b> Resumes should highlight the skills most relevant to your next job—even if you’ve been a designer, manager, and developer.</li>
+        <li><b>Career flexibility:</b> Modern employers value versatility, but want to see a clear, tailored story at a glance.</li>
+        <li>Each recruiter seeks proof you can succeed their way—precise, AI-driven ordering wins attention.</li>
+      </ul>
+    </section>
+
+    <section id="ai-multititle-process">
+      <h2>How AI Optimizes Multi-Title Resumes</h2>
+      <ol>
+        <li>
+          <b>Role Analysis:</b><br>
+          AI reviews your positions, sorting jobs/titles by skill category, industry, or project type so context is immediately clear.
+        </li>
+        <li>
+          <b>Sectioning or Blending:</b><br>
+          Recommends either splitting roles into distinct sections (for related jobs) or blending together for varied experience—whichever maximizes relevance.
+        </li>
+        <li>
+          <b>Skill Mapping:</b><br>
+          AI links achievements, tools, and skills across titles, surfacing patterns that highlight your unique multi-role value.
+        </li>
+        <li>
+          <b>ATS Optimization:</b><br>
+          Builds custom sections and keywords so each title is properly indexed and recruiter-searchable.
+        </li>
+        <li>
+          <b>Narrative Integration:</b><br>
+          Generates summaries and fill-in explanations—like “Career combining Product Design and Management”—for clarity and confidence.
+        </li>
+      </ol>
+    </section>
+
+    <section id="features-table">
+      <h2>Key AI Features for Multiple Job Titles</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Description</th>
+            <th>Why it Matters for Multi-Title Careers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Category Segmentation</td>
+            <td>Clusters related job titles/roles into skill-based or industry-based sections</td>
+            <td>Creates a clear map of expertise for the recruiter</td>
+          </tr>
+          <tr>
+            <td>Blended Experience Narrative</td>
+            <td>Merges hybrid and freelance roles into powerful summary statements</td>
+            <td>Shows career flexibility in a focused, recruiter-friendly way</td>
+          </tr>
+          <tr>
+            <td>Skill and Achievement Linking</td>
+            <td>Connects relevant skills and results from multiple jobs/titles</td>
+            <td>Highlights unique strengths formed across roles</td>
+          </tr>
+          <tr>
+            <td>ATS Section & Keyword Optimization</td>
+            <td>Structures content for optimal parsing by hiring software</td>
+            <td>Ensures every title is recognized and boosts resume discoverability</td>
+          </tr>
+          <tr>
+            <td>Custom Section Titles</td>
+            <td>Lets you headline, for example, “Technical & Creative Projects” to grab attention fast</td>
+            <td>Instantly signals your range to human and AI reviewers</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="best-strategies">
+      <h2>Best Practices for Multi-Title Resume Success</h2>
+      <ul>
+        <li><b>Choose the Right Format:</b> Functional or hybrid formats (AI-suggested) often work better than strict chronological order for multi-title histories.</li>
+        <li><b>Headline Your Value:</b> Use a summary that blends your unique skill set and career arc at the very top.</li>
+        <li><b>Group Strategically:</b> Cluster similar roles or skills together under custom headings (e.g., “Project Management Experience”, “Creative Roles”).</li>
+        <li><b>Highlight Transferable Skills:</b> Let AI surface patterns—like “leadership,” “problem-solving,” or “client relations”—common across all your jobs.</li>
+        <li><b>Tweak for Every Job:</b> Reorder or relabel sections (with AI help) to target each application’s priorities.</li>
+      </ul>
+      <figure>
+        <!-- Visual Example Placeholder -->
+      </figure>
+    </section>
+
+    <section id="faqs">
+      <h2>Frequently Asked Questions</h2>
+      <dl>
+        <dt><b>Should I list every job separately or combine them?</b></dt>
+        <dd>AI recommends the right approach for your targets: combine similar freelance gigs or split out distinct positions as needed for maximum clarity.</dd>
+        <dt><b>Does a multi-title resume confuse recruiters?</b></dt>
+        <dd>Not if well-structured—sampled by AI, recruiters see clear patterns and unique value, not a job-hopper’s mess.</dd>
+        <dt><b>Will ATS read all my job titles if I’ve had several?</b></dt>
+        <dd>Yes—when resume sections, job titles, and skills are formatted with AI-optimized ATS cues, none of your achievements get lost.</dd>
+        <dt><b>What if my past titles are very different?</b></dt>
+        <dd>Modern AI helps you build a strong narrative around transferable skills, career pivots, or side gigs, turning wide-ranging experience into a marketable asset.</dd>
+      </dl>
+    </section>
+
+    <section id="cta">
+      <h2>Get Your Multi-Title Resume Optimized by AI</h2>
+      <p>
+        Don’t let your career variety hurt your job search. Use AI tools to organize, clarify, and amplify every title you’ve held—so recruiters see only the strengths, never confusion. Make your resume a showcase of versatility and unique value!
+      </p>
+      <p style="text-align:center;">
+        <a href="https://ai.getonejob.in/" target="_blank" rel="noopener noreferrer" class="cta-button"
+           role="button" aria-label="Optimize your multi-title resume with AI at ai.getonejob.in">
+          Power-Up Your Multi-Title Resume with AI
+        </a>
+      </p>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-logo">
+      <a href="https://getonejob.in/index.html#"><img src="https://getonejob.in/logo.PNG" alt="ONEJOB Logo Footer" /></a>
+      <span class="brand-footer">ONE JOB</span>
+    </div>
+    <nav class="footer-nav">
+      <a href="https://getonejob.in/index.html#">Home</a>
+      <a href="https://www.getonejob.in/blog.html" class="active">Blog</a>
+      <a href="https://getonejob.in/services.html">Services</a>
+      <a href="https://www.getonejob.in/certificate.html">Certificates</a>
+    </nav>
+    <p>&copy; 2025 <a href="https://ai.getonejob.in/" style="color:#61dafb;text-decoration:none;">ai.getonejob.in</a>. All rights reserved.</p>
+  </footer>
+</body>
+</html>
