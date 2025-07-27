@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI-Generated Resumes for Non-Technical Roles | AI Resume Builder</title>
+  <meta name="description" content="Explore how artificial intelligence customizes resumes for non-technical careers. Discover key features, smart optimization, and proven AI strategies for standout resumes in business, admin, education, HR, and more." />
+  <meta name="keywords" content="AI resume, non-technical resume, resume builder, business resume, admin resume, project management CV, AI resume optimization, HR resume" />
+  <meta name="author" content="ai.getonejob.in" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; margin: 0; background: #f4f7fa; color: #222; line-height: 1.6; }
+    a { color: #2960ff; text-decoration: none; transition: color 0.3s ease; }
+    a:hover, a:focus { color: #0039cc; outline: none; }
+    .navbar {
+      background: #fff;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 15px 6vw 15px 3vw;
+      border-bottom: 1px solid #e5e8ec;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.025);
+      position: sticky; top: 0; z-index: 10;
+    }
+    .navbar .logo-container { display: flex; align-items: center; }
+    .navbar .logo-container img { height: 38px; width: auto; margin-right: 10px; }
+    .navbar .brand-title { font-weight: 700; font-size: 1.2rem; color: #1d3557; }
+    .navbar .nav-links { display: flex; align-items: center; gap: 1.5em; }
+    .navbar .nav-links a { color: #23567a; font-weight: 500; font-size: 1.04rem; padding: 6px 0; border-radius: 3px; transition: background 0.18s; }
+    .navbar .nav-links a:hover, .navbar .nav-links a.active { background: #e7f2fb; color: #2960ff; }
+    .ai-btn { background: #2960ff; color: #fff !important; font-weight: 700; padding: 7px 20px; border-radius: 5px; margin-left: 14px; box-shadow: 0 2px 3px rgba(35,86,122,0.10); transition: background 0.18s; }
+    .ai-btn:hover, .ai-btn:focus { background: #0039cc; }
+    main {
+      max-width: 900px;
+      background: white;
+      margin: 30px auto 60px;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+    }
+    h1, h2, h3 {
+      color: #23567a;
+      margin-top: 1.4em;
+      margin-bottom: 0.4em;
+      line-height: 1.2;
+    }
+    h1 {
+      font-size: 2.6rem; font-weight: 800; margin-bottom: 0.7em;
+    }
+    h2 { font-size: 2.1rem; }
+    h3 { font-size: 1.32rem; }
+    p { font-size: 1.1rem; margin: 0 0 1.2em 0; color: #333; }
+    ul, ol { padding-left: 20px; margin-bottom: 1.2em; color: #444; }
+    li { margin-bottom: 0.55em; font-size: 1.04rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1.8em 0; font-size: 1rem; }
+    th, td { padding: 12px 15px; border: 1px solid #ccc; text-align: left; }
+    th { background-color: #e7f2fb; color: #1f497d; font-weight: 700; }
+    .cta-button {
+      display: inline-block; background-color: #2960ff; color: #fff !important;
+      padding: 14px 36px; font-size: 1.25rem; border-radius: 30px;
+      font-weight: 700; text-align: center; border: none; cursor: pointer;
+      transition: background-color 0.3s ease; margin-top: 1rem; user-select: none; text-decoration: none;
+    }
+    .cta-button:hover, .cta-button:focus { background-color: #0039cc; outline: none; }
+    @media (max-width: 720px) {
+      main { margin: 20px 15px 50px; padding: 25px 11px; }
+      h1 { font-size: 2.08rem; }
+      h2 { font-size: 1.56rem; }
+      h3 { font-size: 1.01rem; }
+      .cta-button { font-size: 1rem; padding: 12px 28px; }
+      table { font-size: 0.9rem; }
+    }
+    figure { max-width: 200px; margin: 20px auto 40px; text-align: center; }
+    figcaption { font-size: 0.93rem; color: #666; margin-top: 8px; font-style: italic; }
+    footer {
+      background: #222; color: #fff; padding: 27px 0 22px;
+      text-align: center; font-size: 1.04rem;
+    }
+    .footer-nav { margin-bottom: 13px; display: flex; justify-content: center; flex-wrap: wrap; gap: 2.3em; }
+    .footer-nav a { color: #fff; font-weight: 500; transition: color 0.2s; }
+    .footer-nav a:hover { color: #61dafb; }
+    .footer-logo { display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+    .footer-logo img { height: 32px; margin-right: 10px; }
+    .footer-logo .brand-footer { font-weight: bold; color: #61dafb; font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-container">
+      <a href="https://getonejob.in/index.html#"><img src="https://getonejob.in/logo.PNG" alt="ONEJOB Logo" /></a>
+      <span class="brand-title">ONE JOB</span>
+    </div>
+    <div class="nav-links">
+      <a href="https://getonejob.in/index.html#">Home</a>
+      <a href="https://www.getonejob.in/blog.html" class="active">Blog</a>
+      <a href="https://getonejob.in/services.html">Services</a>
+      <a href="https://www.getonejob.in/certificate.html">Certificates</a>
+      <a href="https://ai.getonejob.in/" class="ai-btn" target="_blank" rel="noopener noreferrer">ONEJOB AI Services</a>
+    </div>
+  </nav>
+  <main>
+    <h1>AI-Generated Resumes for Non-Technical Roles</h1>
+    <p>
+      Landing a great non-technical job—whether in business, administration, sales, HR, education, or project management—demands a resume that balances skills, achievements, and personality. AI-powered resume builders now make it easy to craft, customize, and update non-technical resumes that get noticed and outshine the competition.
+    </p>
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#why-nontech-tailoring">Why Non-Technical Resumes Need Special Tailoring</a></li>
+      <li><a href="#ai-process">How AI Creates Non-Technical Resumes</a></li>
+      <li><a href="#features-table">Key AI Features for Non-Technical Roles</a></li>
+      <li><a href="#optimization">Optimization Strategies for Non-Technical Candidates</a></li>
+      <li><a href="#faqs">Frequently Asked Questions</a></li>
+      <li><a href="#cta">Build Your Non-Technical Resume with AI</a></li>
+    </ul>
+    <section id="why-nontech-tailoring">
+      <h2>Why Non-Technical Resumes Need Special Tailoring</h2>
+      <ul>
+        <li><b>Transferable skills matter:</b> Communication, problem-solving, teamwork, and leadership should be front and center.</li>
+        <li><b>Role-specific language:</b> Keywords vary between HR, education, business, and admin—AI ensures the right words for each field.</li>
+        <li><b>Accomplishments stand out:</b> Recruiters love metrics and results: “Increased student participation by 40%” or “Reduced office supply costs by 18%.”</li>
+        <li>Every organization and job is unique—custom resumes demonstrate genuine fit and effort over generic templates.</li>
+      </ul>
+    </section>
+    <section id="ai-process">
+      <h2>How AI Creates Non-Technical Resumes</h2>
+      <ol>
+        <li>
+          <b>Job Description Scan:</b><br>
+          AI identifies required soft skills, requirements, and target achievements from listings—e.g., "employee engagement," "budgets," "event planning," "training."
+        </li>
+        <li>
+          <b>Keyword Targeting:</b><br>
+          Suggests field-specific terminology for admin, HR, business operations, or education roles.
+        </li>
+        <li>
+          <b>Personalized Section Order:</b><br>
+          Rearranges experience, education, certifications, and skills to fit your career path and the job you want.
+        </li>
+        <li>
+          <b>Impact Quantification:</b><br>
+          Guides you to phrase accomplishments with numbers and improvements (e.g., “Reduced scheduling conflicts by 25%”).
+        </li>
+        <li>
+          <b>ATS & Human-Readable Formatting:</b><br>
+          Ensures resumes avoid tables/graphics and use clear headings for maximum pass rates with both bots and people.
+        </li>
+      </ol>
+    </section>
+    <section id="features-table">
+      <h2>Key AI Features for Non-Technical Roles</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Description</th>
+            <th>Why it Matters for Non-Technical Roles</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Soft Skill Emphasis</td>
+            <td>Surfaces teamwork, communication, leadership, and problem solving</td>
+            <td>Crucial for business, admin, HR, and project management</td>
+          </tr>
+          <tr>
+            <td>Action-Oriented Language</td>
+            <td>Recommends dynamic bullets like "organized," "improved," or "coordinated"</td>
+            <td>Makes mundane tasks sound impactful and proactive</td>
+          </tr>
+          <tr>
+            <td>Role-Specific Keyword Insertion</td>
+            <td>Finds and inserts words like “HRIS,” “event planning,” or “cross-team collaboration”</td>
+            <td>Improves ATS pass rates and recruiter engagement</td>
+          </tr>
+          <tr>
+            <td>Result Quantification Prompts</td>
+            <td>Prompts for tangible achievements (e.g., cost savings, process improvements)</td>
+            <td>Makes accomplishments stand out in stacks of applications</td>
+          </tr>
+          <tr>
+            <td>Adaptive Formatting</td>
+            <td>Ensures readability, clarity, and ATS compliance for every section</td>
+            <td>Gives you a modern, professional look—no matter your field</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="optimization">
+      <h2>Optimization Strategies for Non-Technical Candidates</h2>
+      <ul>
+        <li><b>Tailor Every Resume:</b> Let AI guide you to mirror job posts and highlight relevant achievements, not just past responsibilities.</li>
+        <li><b>Mix Soft and Hard Skills:</b> Emphasize project management, budgeting, and communications along with people or admin skills.</li>
+        <li><b>Lead with Results:</b> Start sections with the biggest wins—AI helps you phrase these with numbers and active verbs.</li>
+        <li><b>Show Career Progression:</b> Use AI to arrange experiences to show clear growth—even non-linear career paths look smooth and purposeful.</li>
+        <li><b>Edit for Clarity and Brevity:</b> AI tools spot repetition and unclear phrasing, making your resume concise and high-impact.</li>
+      </ul>
+      <figure>
+        <!-- Visual Example Placeholder -->
+      </figure>
+    </section>
+    <section id="faqs">
+      <h2>Frequently Asked Questions</h2>
+      <dl>
+        <dt><b>Will AI-generated resumes look too generic?</b></dt>
+        <dd>No—modern AI tailors every resume to your career, accomplishments, and each application, balancing personal tone and keyword power.</dd>
+        <dt><b>Can I use AI for career changes or returning to the workforce?</b></dt>
+        <dd>Absolutely—AI spotlights transferable skills, soft skills, and supports non-linear career storytelling with positive phrasing.</dd>
+        <dt><b>Are AI tools helpful for education, HR, and sales resumes?</b></dt>
+        <dd>Yes, AI matches the most effective keywords and section orders for a range of non-technical fields—from teaching to event planning to business ops.</dd>
+        <dt><b>Is ATS optimization important for non-technical roles?</b></dt>
+        <dd>Yes, many non-technical resumes are first screened by software—AI ensures the right keywords, layout, and avoids formatting that gets blocked.</dd>
+      </dl>
+    </section>
+    <section id="cta">
+      <h2>Build Your Non-Technical Resume with AI</h2>
+      <p>
+        Ready to land your next business, admin, HR, education, or project management job? Let AI power up your resume—customizing language, order, and achievements so you stand out for every recruiter.
+      </p>
+      <p style="text-align:center;">
+        <a href="https://ai.getonejob.in/" target="_blank" rel="noopener noreferrer" class="cta-button"
+           role="button" aria-label="Build your non-technical resume with AI at ai.getonejob.in">
+          Create a Non-Technical Resume with AI
+        </a>
+      </p>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-logo">
+      <a href="https://getonejob.in/index.html#"><img src="https://getonejob.in/logo.PNG" alt="ONEJOB Logo Footer" /></a>
+      <span class="brand-footer">ONE JOB</span>
+    </div>
+    <nav class="footer-nav">
+      <a href="https://getonejob.in/index.html#">Home</a>
+      <a href="https://www.getonejob.in/blog.html" class="active">Blog</a>
+      <a href="https://getonejob.in/services.html">Services</a>
+      <a href="https://www.getonejob.in/certificate.html">Certificates</a>
+    </nav>
+    <p>&copy; 2025 <a href="https://ai.getonejob.in/" style="color:#61dafb;text-decoration:none;">ai.getonejob.in</a>. All rights reserved.</p>
+  </footer>
+</body>
+</html>
