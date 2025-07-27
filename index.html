@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - ONE JOB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #ffffff;
+            padding: 15px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header .logo img {
+            height: 40px;
+        }
+        .header nav a {
+            color: #0d2c4f;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+        .header nav a:hover {
+            color: #007bff;
+        }
+        .header nav a.active {
+            color: #007bff;
+            border-bottom-color: #007bff;
+        }
+        .header .ai-btn {
+            background-color: #0d2c4f;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .header .ai-btn:hover {
+            background-color: #007bff;
+        }
+
+        /* Main Blog Content */
+        .page-title {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #ffffff;
+        }
+        .page-title h1 {
+            font-size: 2.8em;
+            color: #0d2c4f;
+            margin-bottom: 10px;
+        }
+        .page-title p {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .blog-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 50px 80px;
+            min-height: 100vh;
+        }
+
+        .blog-post-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            width: 350px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .blog-post-card .card-image {
+            height: 200px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .blog-post-card .card-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .card-content h2 {
+            font-size: 1.25em;
+            color: #0d2c4f;
+            margin: 0 0 15px 0;
+            line-height: 1.4;
+            height: 52px; /* Fixed height for 2 lines */
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .card-content p {
+            color: #555;
+            flex-grow: 1;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+        .card-content .read-more-btn {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 600;
+            align-self: flex-start;
+            transition: color 0.3s;
+        }
+        .card-content .read-more-btn:hover {
+            color: #0d2c4f;
+        }
+
+        /* Pagination Styles */
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            flex-wrap: wrap;
+        }
+        .pagination-container button {
+            color: #0d2c4f;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            border: 1px solid #dee2e6;
+            background-color: white;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        .pagination-container button:hover {
+            background-color: #eaf0f6;
+        }
+        .pagination-container button.active {
+            background-color: #0d2c4f;
+            color: white;
+            border-color: #0d2c4f;
+        }
+        .pagination-container button:disabled {
+            color: #aaa;
+            cursor: not-allowed;
+            background-color: #f8f9fa;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #0d2c4f;
+            color: #eaf0f6;
+            padding: 50px 80px 20px 80px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding-bottom: 30px;
+        }
+        .footer-about, .footer-links {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        .footer-about img {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+        .footer-about p {
+            max-width: 350px;
+            color: #adb5bd;
+            line-height: 1.8;
+        }
+        .footer-links h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links ul li a {
+            color: #adb5bd;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+        .footer-links ul li a:hover {
+            color: white;
+        }
+        .footer-bottom {
+            border-top: 1px solid #2c3e50;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #adb5bd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-bottom-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .footer-bottom-links a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="https://getonejob.in/index.html#" class="logo">
+            <img src="https://getonejob.in/logo.PNG" alt="ONEJOB Logo">
+        </a>
+        <nav>
+            <a href="https://getonejob.in/index.html#">Home</a>
+            <a href="https://getonejob.in/services.html">Services</a>
+            <a href="https://www.getonejob.in/blog.html" class="active">Blog</a>
+            <a href="https://www.getonejob.in/certificate.html">Certificates</a>
+            <a href="https://ai.getonejob.in/" class="ai-btn" target="_blank" rel="noopener noreferrer">ONEJOB AI Services</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-title">
+            <h1>Career Insights Blog</h1>
+            <p>Stay ahead in your career with our expert tips, industry trends, and job search strategies powered by AI.</p>
+        </div>
+
+        <div class="blog-container" id="blog-list">
+            <!-- Blog posts will be dynamically inserted here by JavaScript -->
+        </div>
+
+        <div class="pagination-container" id="pagination">
+            <!-- Pagination buttons will be dynamically inserted here -->
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <img src="https://getonejob.in/logo.PNG" alt="ONEJOB Logo" />
+                <p>Revolutionizing careers with AI-powered job search optimization. Your dream job is just one click away.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                    <li><a href="#">Career Tips</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 ONE JOB. All rights reserved.</span>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- DATA: All 150 blog posts with curated images ---
+        const blogData = [
+            { file: "blog1.html", title: "How AI Is Revolutionizing Resume Writing", image: "https://images.unsplash.com/photo-1678483743916-b83c5288b8a3?w=600&q=80" },
+            { file: "blog2.html", title: "10 Benefits of Using AI for Your Resume", image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" },
+            { file: "blog3.html", title: "Step-by-Step Guide to Creating an AI-Generated Resume", image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=600&q=80" },
+            { file: "blog4.html", title: "AI vs. Traditional Resume Writing: Which Is Better?", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" },
+            { file: "blog5.html", title: "Common Mistakes in AI-Generated Resumes and How to Avoid Them", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" },
+            { file: "blog6.html", title: "Top 5 AI Resume Builders Compared", image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80" },
+            { file: "blog7.html", title: "How to Customize AI-Generated Resumes for Different Industries", image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&q=80" },
+            { file: "blog8.html", title: "The Role of Machine Learning in Resume Creation", image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=600&q=80" },
+            { file: "blog9.html", title: "AI-Generated Resume Templates: Pros and Cons", image: "https://images.unsplash.com/photo-1589599423582-d4c18c454a28?w=600&q=80" },
+            { file: "blog10.html", title: "How AI Analyzes Job Descriptions to Tailor Your Resume", image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&q=80" },
+            { file: "blog11.html", title: "Optimizing Your LinkedIn Profile with AI-Generated Content", image: "https://images.unsplash.com/photo-1611944212129-29955ae402d0?w=600&q=80" },
+            { file: "blog12.html", title: "The Future of Hiring: AI-Driven Resume Screening", image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80" },
+            { file: "blog13.html", title: "How AI Improves Resume Keyword Matching", image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&q=80" },
+            { file: "blog14.html", title: "Creating a Professional Summary with AI", image: "https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=600&q=80" },
+            { file: "blog15.html", title: "AI Tools to Enhance Your Resume’s Design", image: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&q=80" },
+            { file: "blog16.html", title: "How to Integrate Soft Skills in AI-Generated Resumes", image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" },
+            { file: "blog17.html", title: "Writing an ATS-Friendly Resume with AI", image: "https://images.unsplash.com/photo-1560264280-88b68371db39?w=600&q=80" },
+            { file: "blog18.html", title: "How AI Identifies Your Transferable Skills", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" },
+            { file: "blog19.html", title: "Case Study: Job Seeker Success with AI-Generated Resume", image: "https://images.unsplash.com/photo-1556742212-0b2804b43b8b?w=600&q=80" },
+            { file: "blog20.html", title: "Top 3 AI Algorithms Powering Resume Builders", image: "https://images.unsplash.com/photo-1507146426996-321341aa1ac5?w=600&q=80" },
+            { file: "blog21.html", title: "How to Update Your Resume Using AI Insights", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80" },
+            { file: "blog22.html", title: "AI-Generated Cover Letters That Stand Out", image: "https://images.unsplash.com/photo-1587573089734-09cb69c0f2b4?w=600&q=80" },
+            { file: "blog23.html", title: "Tips for Proofreading AI-Generated Resumes", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" },
+            { file: "blog24.html", title: "Personal Branding Through AI-Generated Resumes", image: "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?w=600&q=80" },
+            { file: "blog25.html", title: "How to Use AI to Quantify Your Achievements", image: "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=600&q=80" },
+            { file: "blog26.html", title: "AI vs. Human: The Perfect Resume Balance", image: "https://images.unsplash.com/photo-1614036116432-d803424a3024?w=600&q=80" },
+            { file: "blog27.html", title: "The Ethics of AI-Generated Resumes", image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&q=80" },
+            { file: "blog28.html", title: "How AI Adapts Your Resume for Remote Jobs", image: "https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?w=600&q=80" },
+            { file: "blog29.html", title: "AI-Generated Resumes for Career Changers", image: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=600&q=80" },
+            { file: "blog30.html", title: "How to Leverage AI to Write a Resume for Internship Applications", image: "https://images.unsplash.com/photo-1571260899233-a363a92534e4?w=600&q=80" },
+            { file: "blog31.html", title: "The Impact of AI on Executive Resume Writing", image: "https://images.unsplash.com/photo-1529119368496-2dfda6ec2804?w=600&q=80" },
+            { file: "blog32.html", title: "How AI Tailors Resumes for Technical Roles", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" },
+            { file: "blog33.html", title: "AI Strategies for Highlighting Leadership Skills", image: "https://images.unsplash.com/photo-1560250056-07ba64664864?w=600&q=80" },
+            { file: "blog34.html", title: "AI-Generated Resumes for Creative Professionals", image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&q=80" },
+            { file: "blog35.html", title: "How to Evaluate AI-Generated Resume Quality", image: "https://images.unsplash.com/photo-1549923746-c502d488b3ea?w=600&q=80" },
+            { file: "blog36.html", title: "AI Resume Writing: What Recruiters Really Think", image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&q=80" },
+            { file: "blog37.html", title: "How AI Handles Career Gaps on Your Resume", image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=600&q=80" },
+            { file: "blog38.html", title: "Using AI to Optimize Resume Length", image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&q=80" },
+            { file: "blog39.html", title: "Top Indicators of a High-Converting AI-Generated Resume", image: "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=600&q=80" },
+            { file: "blog40.html", title: "AI Tips for Crafting a Results-Oriented Resume", image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" },
+            { file: "blog41.html", title: "How to Incorporate Keywords Seamlessly with AI", image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=600&q=80" },
+            { file: "blog42.html", title: "AI-Generated Resumes for Fresh Graduates", image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=600&q=80" },
+            { file: "blog43.html", title: "Saving Time: Automated Resume Updates with AI", image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&q=80" },
+            { file: "blog44.html", title: "How to Blend AI Suggestions with Personal Style", image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&q=80" },
+            { file: "blog45.html", title: "AI Tools That Analyze Resume Readability", image: "https://images.unsplash.com/photo-1531482615713-2c65778cf0b3?w=600&q=80" },
+            { file: "blog46.html", title: "How AI Enhances Your Resume’s Visual Appeal", image: "https://images.unsplash.com/photo-1572044162416-1ffd0661a55f?w=600&q=80" },
+            { file: "blog47.html", title: "AI-Driven Resume Audits: What You Need to Know", image: "https://images.unsplash.com/photo-1559526324-c1f275fbfa32?w=600&q=80" },
+            { file: "blog48.html", title: "How to Use AI to Highlight Volunteering Experience", image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=80" },
+            { file: "blog49.html", title: "AI-Generated Resumes for Mid-Career Professionals", image: "https://images.unsplash.com/photo-1552581234-26160f608093?w=600&q=80" },
+            { file: "blog50.html", title: "Top Challenges When Using AI for Resumes and How to Overcome Them", image: "https://images.unsplash.com/photo-1542382257-80deda0e5096?w=600&q=80" },
+            { file: "blog51.html", title: "AI-Powered Resume Insights: Data You Need", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" },
+            { file: "blog52.html", title: "How AI Tailors Resumes for Sales Positions", image: "https://images.unsplash.com/photo-1556742044-53ed7d3e185a?w=600&q=80" },
+            { file: "blog53.html", title: "AI-Generated Resumes for Healthcare Professionals", image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=600&q=80" },
+            { file: "blog54.html", title: "The Science Behind AI Resume Recommendations", image: "https://images.unsplash.com/photo-1532187643623-dbf49b51bda4?w=600&q=80" },
+            { file: "blog55.html", title: "How to Ensure Accuracy in AI-Generated Resumes", image: "https://images.unsplash.com/photo-1496065187959-7f07b8353c55?w=600&q=80" },
+            { file: "blog56.html", title: "AI and Emotional Intelligence in Resumes", image: "https://images.unsplash.com/photo-1528372444332-834807a3c7ca?w=600&q=80" },
+            { file: "blog57.html", title: "Using AI to Optimize Your Resume for International Jobs", image: "https://images.unsplash.com/photo-1523493361803-b52759f2a9ce?w=600&q=80" },
+            { file: "blog58.html", title: "How AI Updates Resumes in Real-Time Based on Job Market Trends", image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=600&q=80" },
+            { file: "blog59.html", title: "AI Techniques for Highlighting Project Outcomes", image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&q=80" },
+            { file: "blog60.html", title: "How AI Simplifies Resume Formatting", image: "https://images.unsplash.com/photo-1524749292158-7540c2494485?w=600&q=80" },
+            { file: "blog61.html", title: "The Top Metrics AI Uses to Score Your Resume", image: "https://images.unsplash.com/photo-1551288049-56b328a8a2c2?w=600&q=80" },
+            { file: "blog62.html", title: "AI-Generated Resumes for Freelancers", image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80" },
+            { file: "blog63.html", title: "Crafting an AI-Enhanced Resume for Government Jobs", image: "https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=600&q=80" },
+            { file: "blog64.html", title: "How to Protect Your Data When Using AI Resume Tools", image: "https://images.unsplash.com/photo-1550751827-4133d1a6cae0?w=600&q=80" },
+            { file: "blog65.html", title: "AI-Driven Resume A/B Testing: Boost Your Interview Rate", image: "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=600&q=80" },
+            { file: "blog66.html", title: "How AI Improves Resume Bullet Points", image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=600&q=80" },
+            { file: "blog67.html", title: "AI-Generated Resumes for STEM Careers", image: "https://images.unsplash.com/photo-1579751524317-acb3d5628e93?w=600&q=80" },
+            { file: "blog68.html", title: "How to Incorporate Certifications Using AI", image: "https://images.unsplash.com/photo-1599508704512-2f19efd1e35f?w=600&q=80" },
+            { file: "blog69.html", title: "AI and Color Psychology in Resume Design", image: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&q=80" },
+            { file: "blog70.html", title: "How AI Ensures Consistent Tone Throughout Your Resume", image: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=600&q=80" },
+            { file: "blog71.html", title: "AI-Powered Resume Analytics: Tracking Your Applications", image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80" },
+            { file: "blog72.html", title: "How to Optimize Your Resume Headline with AI", image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=600&q=80" },
+            { file: "blog73.html", title: "AI-Generated Resumes: Myths vs. Reality", image: "https://images.unsplash.com/photo-1533749047139-183de3c07d89?w=600&q=80" },
+            { file: "blog74.html", title: "How AI Helps Recent Graduates Stand Out", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80" },
+            { file: "blog75.html", title: "Using AI to Tailor Resumes for Company Culture Fit", image: "https://images.unsplash.com/photo-1549923746-c502d488b3ea?w=600&q=80" },
+            { file: "blog76.html", title: "AI-Enhanced Resumes for Remote Freelancers", image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80" },
+            { file: "blog77.html", title: "How to Use AI to Highlight Awards and Honors", image: "https://images.unsplash.com/photo-1573033535261-4a87a2757dea?w=600&q=80" },
+            { file: "blog78.html", title: "AI-Generated Resumes for Nonprofit Sector", image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&q=80" },
+            { file: "blog79.html", title: "How AI Can Boost Your Resume’s SEO", image: "https://images.unsplash.com/photo-1563986768694-5558b0d7a644?w=600&q=80" },
+            { file: "blog80.html", title: "AI Strategies to Showcase Quantifiable Results", image: "https://images.unsplash.com/photo-1521790797524-2c2c0cde3a8a?w=600&q=80" },
+            { file: "blog81.html", title: "How to Integrate AI-Generated Resumes with Job Boards", image: "https://images.unsplash.com/photo-1521791055346-6180630b336a?w=600&q=80" },
+            { file: "blog82.html", title: "The Evolution of Resume Writing: AI’s Role", image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=600&q=80" },
+            { file: "blog83.html", title: "AI-Generated Resumes for Legal Professionals", image: "https://images.unsplash.com/photo-1589216532372-1c2a367902d9?w=600&q=80" },
+            { file: "blog84.html", title: "How to Use AI for Cross-Industry Resume Adaptation", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" },
+            { file: "blog85.html", title: "AI Tools for Real-Time Resume Feedback", image: "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?w=600&q=80" },
+            { file: "blog86.html", title: "How to Leverage AI to Create a Skills-Based Resume", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80" },
+            { file: "blog87.html", title: "AI-Driven Resume Enhancements for Remote Interviews", image: "https://images.unsplash.com/photo-1573496130407-57329f42f635?w=600&q=80" },
+            { file: "blog88.html", title: "How AI Handles Multilingual Resume Generation", image: "https://images.unsplash.com/photo-1543465077-50563453c25a?w=600&q=80" },
+            { file: "blog89.html", title: "AI Techniques to Highlight Entrepreneurial Experience", image: "https://images.unsplash.com/photo-1497032628192-86f99d791b7e?w=600&q=80" },
+            { file: "blog90.html", title: "How to Optimize Your Resume’s Call to Action with AI", image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=600&q=80" },
+            { file: "blog91.html", title: "AI-Generated Resumes for Seasonal Job Seekers", image: "https://images.unsplash.com/photo-1517457373958-b7bdd4e87205?w=600&q=80" },
+            { file: "blog92.html", title: "How to Use AI to Update Resumes After Promotion", image: "https://images.unsplash.com/photo-1549923746-c502d488b3ea?w=600&q=80" },
+            { file: "blog93.html", title: "AI Tools for Identifying Gaps in Your Resume", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" },
+            { file: "blog94.html", title: "How AI Can Personalize Your Resume for Each Application", image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" },
+            { file: "blog95.html", title: "AI-Driven Resume Success Stories: Real Examples", image: "https://images.unsplash.com/photo-1556742212-0b2804b43b8b?w=600&q=80" },
+            { file: "blog96.html", title: "How AI Helps You Quantify Soft Skills", image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&q=80" },
+            { file: "blog97.html", title: "AI Strategies for Effective Resume Layout", image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=600&q=80" },
+            { file: "blog98.html", title: "How to Use AI to Craft a Career Objective Statement", image: "https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=600&q=80" },
+            { file: "blog99.html", title: "AI-Generated Resumes vs. DIY Resumes: A Cost–Benefit Analysis", image: "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=600&q=80" },
+            { file: "blog100.html", title: "Future Trends: What’s Next for AI in Resume Writing", image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80" },
+            { file: "blog101.html", title: "How to Use AI to Tailor Resumes for Startup Roles", image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" },
+            { file: "blog102.html", title: "AI-Generated Resumes for Gig Economy Workers", image: "https://images.unsplash.com/photo-1552581234-26160f608093?w=600&q=80" },
+            { file: "blog103.html", title: "The Best AI Resume Tools for Remote Job Seekers", image: "https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?w=600&q=80" },
+            { file: "blog104.html", title: "How AI Creates Impactful Career Summaries", image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80" },
+            { file: "blog105.html", title: "AI Methods for Showcasing Technical Certifications", image: "https://images.unsplash.com/photo-1599508704512-2f19efd1e35f?w=600&q=80" },
+            { file: "blog106.html", title: "Optimizing Resume Skills Sections with AI", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80" },
+            { file: "blog107.html", title: "How AI Streamlines Resume Review Processes", image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&q=80" },
+            { file: "blog108.html", title: "AI-Driven Resume Tips for Entry-Level Jobs", image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=600&q=80" },
+            { file: "blog109.html", title: "How to Use AI to Emphasize Soft Skills", image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" },
+            { file: "blog110.html", title: "AI-Generated Resumes for Hospitality Professionals", image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80" },
+            { file: "blog111.html", title: "Measuring Resume Effectiveness with AI Analytics", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" },
+            { file: "blog112.html", title: "How AI Helps You Write Better Resume Headlines", image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=600&q=80" },
+            { file: "blog113.html", title: "AI-Generated Resumes for Education Sector Careers", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80" },
+            { file: "blog114.html", title: "Incorporating AI-Recommended Action Verbs in Your Resume", image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&q=80" },
+            { file: "blog115.html", title: "How AI Adapts Resumes for Contract Positions", image: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=600&q=80" },
+            { file: "blog116.html", title: "AI Tools for Writing Concise Bullet Points", image: "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=600&q=80" },
+            { file: "blog117.html", title: "The Role of AI in Resume Personalization", image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&q=80" },
+            { file: "blog118.html", title: "AI Strategies for Highlighting Cross-Functional Experience", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" },
+            { file: "blog119.html", title: "How AI Helps with Resume A/B Subject Lines", image: "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=600&q=80" },
+            { file: "blog120.html", title: "AI-Generated Resumes for Customer Service Roles", image: "https://images.unsplash.com/photo-1556742044-53ed7d3e185a?w=600&q=80" },
+            { file: "blog121.html", title: "Using AI to Craft Strong Resume Objectives", image: "https://images.unsplash.com/photo-1496065187959-7f07b8353c55?w=600&q=80" },
+            { file: "blog122.html", title: "How AI Enhances Resume Readability for Recruiters", image: "https://images.unsplash.com/photo-1531482615713-2c65778cf0b3?w=600&q=80" },
+            { file: "blog123.html", title: "AI-Powered Resume Optimization for Tech Startups", image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" },
+            { file: "blog124.html", title: "How AI Integrates Portfolio Links into Resumes", image: "https://images.unsplash.com/photo-1559526324-c1f275fbfa32?w=600&q=80" },
+            { file: "blog125.html", title: "AI Best Practices for Resume Section Ordering", image: "https://images.unsplash.com/photo-1524749292158-7540c2494485?w=600&q=80" },
+            { file: "blog126.html", title: "How AI Identifies and Fills Skill Gaps", image: "https://images.unsplash.com/photo-1542382257-80deda0e5096?w=600&q=80" },
+            { file: "blog127.html", title: "AI-Generated Resumes for Financial Services Positions", image: "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=600&q=80" },
+            { file: "blog128.html", title: "The Psychology Behind AI-Generated Resume Formats", image: "https://images.unsplash.com/photo-1528372444332-834807a3c7ca?w=600&q=80" },
+            { file: "blog129.html", title: "How AI Improves Resume Engagement Rates", image: "https://images.unsplash.com/photo-1551288049-56b328a8a2c2?w=600&q=80" },
+            { file: "blog130.html", title: "Using AI to Optimize Resume with Action-Oriented Phrases", image: "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=600&q=80" },
+            { file: "blog131.html", title: "AI-Driven Resume Tips for Freelance Writers", image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80" },
+            { file: "blog132.html", title: "How AI Handles Multiple Job Titles on One Resume", image: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=600&q=80" },
+            { file: "blog133.html", title: "AI Tools for Generating Resume Summary Statements", image: "https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=600&q=80" },
+            { file: "blog134.html", title: "How to Use AI to Highlight Diversity Initiatives", image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&q=80" },
+            { file: "blog135.html", title: "AI-Generated Resumes for Marketing Professionals", image: "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?w=600&q=80" },
+            { file: "blog136.html", title: "How AI Uses Sentiment Analysis in Resume Crafting", image: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=600&q=80" },
+            { file: "blog137.html", title: "AI Techniques for Highlighting Technical Projects", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" },
+            { file: "blog138.html", title: "How AI Helps You Avoid Resume Redundancy", image: "https://images.unsplash.com/photo-1533749047139-183de3c07d89?w=600&q=80" },
+            { file: "blog139.html", title: "AI-Generated Resumes for Non-Technical Roles", image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&q=80" },
+            { file: "blog140.html", title: "Using AI to Create Mobile-Friendly Resumes", image: "https://images.unsplash.com/photo-1559526324-c1f275fbfa32?w=600&q=80" },
+            { file: "blog141.html", title: "AI-Driven Resume Strategies for International Applicants", image: "https://images.unsplash.com/photo-1523493361803-b52759f2a9ce?w=600&q=80" },
+            { file: "blog142.html", title: "How AI Optimizes Resumes for University Applications", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80" },
+            { file: "blog143.html", title: "AI Tools for Automatic Resume Formatting", image: "https://images.unsplash.com/photo-1524749292158-7540c2494485?w=600&q=80" },
+            { file: "blog144.html", title: "How AI Improves Resume Grammar and Style", image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&q=80" },
+            { file: "blog145.html", title: "AI-Generated Resumes for Science Researchers", image: "https://images.unsplash.com/photo-1579751524317-acb3d5628e93?w=600&q=80" },
+            { file: "blog146.html", title: "The Impact of AI on Resume Aesthetics", image: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&q=80" },
+            { file: "blog147.html", title: "How to Use AI to Quantify Volunteer Work", image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=80" },
+            { file: "blog148.html", title: "AI Best Practices for Keyword-Dense Resumes", image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&q=80" },
+            { file: "blog149.html", title: "AI-Driven Resume Strategies for Sales Executives", image: "https://images.unsplash.com/photo-1556742212-0b2804b43b8b?w=600&q=80" },
+            { file: "blog150.html", title: "How AI Creates Accessible Resumes for All Audiences", image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&q=80" }
+        ];
+
+        const listContainer = document.getElementById('blog-list');
+        const paginationContainer = document.getElementById('pagination');
+        const itemsPerPage = 25;
+        let currentPage = 1;
+
+        function displayList(items, wrapper, rowsPerPage, page) {
+            wrapper.innerHTML = "";
+            page--; 
+            let start = rowsPerPage * page;
+            let end = start + rowsPerPage;
+            let paginatedItems = items.slice(start, end);
+
+            for (let i = 0; i < paginatedItems.length; i++) {
+                let item = paginatedItems[i];
+                let itemElement = document.createElement('article');
+                itemElement.classList.add('blog-post-card');
+                itemElement.innerHTML = `
+                    <div class="card-image" style="background-image: url('${item.image}')"></div>
+                    <div class="card-content">
+                        <h2>${item.title}</h2>
+                        <p>Learn key strategies and insights on this topic to advance your career and improve your job application.</p>
+                        <a href="${item.file}" class="read-more-btn">Read More →</a>
+                    </div>
+                `;
+                wrapper.appendChild(itemElement);
+            }
+        }
+
+        function setupPagination(items, wrapper, rowsPerPage) {
+            wrapper.innerHTML = "";
+            let pageCount = Math.ceil(items.length / rowsPerPage);
+
+            let prevButton = document.createElement('button');
+            prevButton.innerText = "Previous";
+            prevButton.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayList(items, listContainer, itemsPerPage, currentPage);
+                    updatePaginationButtons();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+            wrapper.appendChild(prevButton);
+
+            for (let i = 1; i <= pageCount; i++) {
+                let btn = paginationButton(i, items);
+                wrapper.appendChild(btn);
+            }
+            
+            let nextButton = document.createElement('button');
+            nextButton.innerText = "Next";
+            nextButton.addEventListener('click', () => {
+                if (currentPage < pageCount) {
+                    currentPage++;
+                    displayList(items, listContainer, itemsPerPage, currentPage);
+                    updatePaginationButtons();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+            wrapper.appendChild(nextButton);
+
+            updatePaginationButtons();
+        }
+
+        function paginationButton(page, items) {
+            let button = document.createElement('button');
+            button.innerText = page;
+            button.addEventListener('click', function() {
+                currentPage = page;
+                displayList(items, listContainer, itemsPerPage, currentPage);
+                updatePaginationButtons();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            return button;
+        }
+
+        function updatePaginationButtons() {
+            let pageCount = Math.ceil(blogData.length / itemsPerPage);
+            let buttons = paginationContainer.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+                if (button.innerText === "Previous") {
+                    button.disabled = currentPage === 1;
+                } else if (button.innerText === "Next") {
+                    button.disabled = currentPage === pageCount;
+                } else if (parseInt(button.innerText) === currentPage) {
+                    button.classList.add('active');
+                }
+            });
+        }
+        
+        displayList(blogData, listContainer, itemsPerPage, currentPage);
+        setupPagination(blogData, paginationContainer, itemsPerPage);
+    });
+</script>
+
+</body>
+</html>
