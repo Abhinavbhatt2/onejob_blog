@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATS Score Calculator - ONE JOB AI Toolkit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              primary: {
+                DEFAULT: '#2563EB', // blue-600
+                hover: '#1D4ED8', // blue-700
+                text: '#FFFFFF',
+              },
+              'primary-dark': '#1E3A8A', // blue-900
+              secondary: '#F59E0B', // amber-500
+              background: '#F7FAFC', // slate-50
+              card: '#FFFFFF',
+              'text-dark': '#111827', // gray-900
+              'text-light': '#6B7280', // gray-500
+              error: '#E53E3E',
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-background font-sans">
+    <div class="flex-grow bg-background py-12 px-4 sm:px-6 lg:px-8 animate-fade-in">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-10">
+                <a href="https://ai.getonejob.in" class="inline-flex items-center justify-center px-4 py-2 border text-base font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200 text-primary bg-transparent border-primary hover:bg-blue-50 focus:ring-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"></path></svg>
+                    Back to Toolkit
+                </a>
+            </div>
+
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-extrabold tracking-tight text-text-dark sm:text-5xl md:text-6xl">
+                    Decode Your <span class="text-primary">ATS Score</span>
+                </h1>
+                <p class="mt-4 text-lg text-text-light max-w-3xl mx-auto">
+                    Understand what Applicant Tracking Systems are looking for and how our AI-powered analysis helps you optimize your resume to pass the first critical filter.
+                </p>
+            </div>
+            
+            <div class="text-center mb-16">
+                 <h2 class="text-3xl font-bold tracking-tight text-text-dark sm:text-4xl">Why Your ATS Score Matters</h2>
+                 <p class="mt-4 text-lg text-text-light max-w-3xl mx-auto">
+                    Over 90% of large companies use an Applicant Tracking System (ATS) to screen candidates. Our calculator simulates this process, giving you the insights needed to get your resume seen by a human.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-card p-6 rounded-xl shadow-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 duration-300 h-full">
+                    <div class="bg-blue-100 p-4 rounded-full mb-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                    <h3 class="text-xl font-semibold text-primary-dark mb-2">Beat the Bots</h3>
+                    <p class="text-text-light">Our tool analyzes your resume against the job description for keyword density, skill matching, and relevance, just like a real ATS.</p>
+                </div>
+                <div class="bg-card p-6 rounded-xl shadow-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 duration-300 h-full">
+                    <div class="bg-blue-100 p-4 rounded-full mb-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.355a7.5 7.5 0 01-4.5 0m4.5 0v.75A2.25 2.25 0 0113.5 21h-3a2.25 2.25 0 01-2.25-2.25V18m4.5 0A6.012 6.012 0 0015 11.25c0-1.096-.343-2.126-.954-2.951a5.949 5.949 0 00-2.006-1.789c-.71-.433-1.464-.707-2.268-.832A5.962 5.962 0 006 9c0 1.096.343 2.126.954 2.951a5.949 5.949 0 002.006 1.789c.71.433 1.464.707 2.268.832A5.962 5.962 0 0012 18zm0-4.5a.75.75 0 00.75-.75V6.75a.75.75 0 00-1.5 0v6a.75.75 0 00.75.75z"></path></svg></div>
+                    <h3 class="text-xl font-semibold text-primary-dark mb-2">Data-Driven Insights</h3>
+                    <p class="text-text-light">Receive a score out of 100, a detailed breakdown of each scoring component, and a clear interpretation of your result.</p>
+                </div>
+                <div class="bg-card p-6 rounded-xl shadow-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 duration-300 h-full">
+                    <div class="bg-blue-100 p-4 rounded-full mb-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM18 13.5a3.375 3.375 0 00-3.375-3.375h-.25a3.375 3.375 0 00-3.375 3.375v.25a3.375 3.375 0 003.375 3.375h.25a3.375 3.375 0 003.375-3.375v-.25z"></path></svg></div>
+                    <h3 class="text-xl font-semibold text-primary-dark mb-2">Actionable Feedback</h3>
+                    <p class="text-text-light">Get specific, actionable recommendations on how to improve your resume, targeting the areas with the lowest scores.</p>
+                </div>
+                <div class="bg-card p-6 rounded-xl shadow-lg flex flex-col items-center text-center transition-transform transform hover:scale-105 duration-300 h-full">
+                    <div class="bg-blue-100 p-4 rounded-full mb-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-primary"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.155V18a2.25 2.25 0 01-2.25 2.25h-12A2.25 2.25 0 013.75 18V9.75A2.25 2.25 0 016 7.5h4.5m4.5 0V6A2.25 2.25 0 0012.75 3.75h-1.5A2.25 2.25 0 009 6v1.5m4.5 0h4.5m-4.5 0a2.25 2.25 0 012.25 2.25v1.125c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 01-1.125-1.125V9.75A2.25 2.25 0 0110.5 7.5h1.5M12 14.25h.008v.008H12v-.008z"></path></svg></div>
+                    <h3 class="text-xl font-semibold text-primary-dark mb-2">Target Every Application</h3>
+                    <p class="text-text-light">Use the score to fine-tune your resume for each job you apply for, dramatically increasing your chances of getting an interview.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-20">
+                <h2 class="text-3xl font-bold text-text-dark">Ready to optimize your resume?</h2>
+                <div class="mt-8">
+                    <a href="https://ai.getonejob.in" class="inline-flex items-center justify-center px-6 py-3 border text-base font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200 text-primary-text bg-primary border-transparent hover:bg-primary-hover focus:ring-primary">
+                        Calculate My ATS Score Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
